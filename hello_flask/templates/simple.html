@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %} 
+
+<table class="table table-songs">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>Album</th>
+        <th><span class="fa fa-calendar-o"></span></th>
+        <th><span class="fa fa-clock-o"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>We Don't Talk Anymore</td>
+        <td>Charlie Puth and Selena Gomez</td>
+        <td>Nine Track Mind</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">3:50</td>
+      </tr>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>Counting Stars</td>
+        <td>One Republic</td>
+        <td>Native</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">4:43</td>
+      </tr>
+      <tr tabindex="1" class="active">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>Don't Let Me Down</td>
+        <td>The Chainsmokers and Daya</td>
+        <td>Collage</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">3:29</td>
+      </tr>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>Lean On</td>
+        <td>Major Lazer and DJ Snake</td>
+        <td>Peace is the Mission</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">2:58</td>
+      </tr>
+    </tbody>
+  </table>
+
+<div>
+</div>
+{% for entry in entries %}
+<div>
+    <h2>{{ entry.name }}</h2>
+    <div>
+        <div>
+            <div>Genre:
+                <b>{{ entry.genre }}</b>
+            </div>
+        </div>
+        <div>
+            <div>Rating:
+                <b>{{ entry.rating }}</b>
+            </div>
+        </div>
+        <div>
+            <div>
+                <audio controls>
+                    <source src="http://localhost:5000/musicPlayer/{{ entry.id }}" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+    {% else %}
+    <li>
+        <em>Unbelievable. No entries so far</em>
+        {% endfor %}
+</div>
+
+{% endblock %}

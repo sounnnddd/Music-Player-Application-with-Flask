@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %} 
+
+<table class="table table-songs">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>Album</th>
+        <th><span class="fa fa-calendar-o"></span></th>
+        <th><span class="fa fa-clock-o"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>We Don't Talk Anymore</td>
+        <td>Charlie Puth and Selena Gomez</td>
+        <td>Nine Track Mind</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">3:50</td>
+      </tr>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>Counting Stars</td>
+        <td>One Republic</td>
+        <td>Native</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">4:43</td>
+      </tr>
+      <tr tabindex="1" class="active">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>Don't Let Me Down</td>
+        <td>The Chainsmokers and Daya</td>
+        <td>Collage</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">3:29</td>
+      </tr>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>Lean On</td>
+        <td>Major Lazer and DJ Snake</td>
+        <td>Peace is the Mission</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">2:58</td>
+      </tr>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>In My Feelings</td>
+        <td>Drake</td>
+        <td>Scorpion</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">3:38</td>
+      </tr>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>Uptown Funk</td>
+        <td>Mark Ronson and Bruno Mars</td>
+        <td>Uptown Special</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">4:30</td>
+      </tr>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>Starboy</td>
+        <td>The Weeknd</td>
+        <td>Starboy</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">3:51</td>
+      </tr>
+      <tr tabindex="1">
+        <td>
+          <a href="#" tabindex="0" class="play-btn fa-stack fa-lg">
+            <span class="fa fa-play fa-stack-1x"></span>
+            <span class="fa fa-circle-thin fa-stack-2x"></span>
+          </a>
+        </td>
+        <td><span class="fa fa-check"></span></td>
+        <td>See You Again</td>
+        <td>Charlie Puth and Wiz Khalifa</td>
+        <td>Furious 7</td>
+        <td class="secondary-info">2016-07-23</td>
+        <td class="secondary-info">3:57</td>
+      </tr>
+    </tbody>
+  </table>
+
+<div>
+</div>
+
+
+<div class="container-fluid">
+    <div id="sl">
+        {% for entry in entries %}
+        <div class="well" style="border:1px solid #84bd00;">
+            <b>{{ entry.name }}</b>
+            <div class="row">
+                <div class="col-md-3">
+                    <div></div>
+                </div>
+                <div class="col-md-3">
+                    <div>Genre:
+                        <b>{{ entry.genre }}</b>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div>Rating:
+                        <b>{{ entry.rating }}</b>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="pull-right">
+                        <audio controls>
+                            <source src="http://localhost:5000/musicPlayer/{{ entry.id }}" type="audio/mp3">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% else %}
+        <li>
+            <em>Unbelievable. No entries so far</em>
+            {% endfor %}
+    </div>
+</div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+{% endblock %}
