@@ -1,6 +1,6 @@
 # Music-Player-Application-with-Flask
 Online music player application (only front-end) deployed with the Flask framework.
-** This project deals with an online music player run in a web page that is created for artists and for the listeners who use this application.**
+This project deals with an online music player run in a web page that is created for artists and for the listeners who use this application.
 A comprehensive study of the application has been done and the SRS document created for the music player application. The code has been implemented with fewer functionalities than that has been discussed in the SRS document.
 
 ## This repository consists of the following:
